@@ -40,7 +40,7 @@ function ouFinder(awayTeamName){
         return 'Colorado'
     }
     if(awayTeamName === "blue jays"){
-        return 'Toronto, Ontario'
+        return 'Toronto'
     }
     if(awayTeamName === "pirates"){
         return 'Pittsburgh'

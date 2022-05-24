@@ -5,12 +5,12 @@ let obj;
 let key;
 let value;
 
-function eraFinder(homeTeamName){
+function teamFinder(homeTeamName){
     if(homeTeamName === "red sox"){
         return 'Boston'
     }
     if(homeTeamName === "yankees"){
-        return 'NY Yankees'
+        return 'N.Y. Yankees'
     }
     if(homeTeamName === "astros"){
         return 'Houston'
@@ -25,7 +25,7 @@ function eraFinder(homeTeamName){
         return 'Chi Cubs'
     }
     if(homeTeamName === "giants"){
-        return 'SF Giants'
+        return 'San Francisco'
     }
     if(homeTeamName === "guardians"){
         return 'Cleveland'
@@ -91,21 +91,21 @@ function eraFinder(homeTeamName){
         return 'LA Dodgers'
     }
     if(homeTeamName === "mets"){
-        return 'NY Mets'
+        return 'N.Y. Mets'
     }
     if(homeTeamName === "tigers"){
         return 'Detroit'
     }
 }
 
-export function hTeamEra(teamEra) {
-    for (i = 0; i < teamEra.length; i++) {
-        obj = teamEra[i];
+export function runLineFinder(runLines) {
+    for (i = 0; i < runLines.length; i++) {
+        obj = runLines[i];
         for (key in obj) {
             value = obj[key];
             // console.log("-" + key + ": " + value);
-            if (value + '' === eraFinder(homeTeamName)) {
-                return obj.teamEra;
+            if (value + '' === teamFinder(homeTeamName)) {
+                return obj.runLine;
             }
         }
     }

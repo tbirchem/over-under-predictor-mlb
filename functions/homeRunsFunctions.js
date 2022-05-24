@@ -40,7 +40,7 @@ function runFinder(homeTeamName){
         return 'Colorado'
     }
     if(homeTeamName === "blue jays"){
-        return 'Toronto, Ontario'
+        return 'Toronto'
     }
     if(homeTeamName === "pirates"){
         return 'Pittsburgh'

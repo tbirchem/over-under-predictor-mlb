@@ -6,23 +6,25 @@ const prompt = require('prompt-sync')();
 export const awayTeamName = prompt('Away team:');
 export const homeTeamName = prompt('Home team:');
 console.log("--- Respond with a 't' or 'f' ---")
-console.log("*if Away or Home team have a top pitcher, answer 'f' for the corresponding team having a good pitcher*")
+//console.log("*if Away or Home team have a top pitcher, answer 'f' for the corresponding team having a good pitcher*")
 export const awayStarPitcher = prompt('Away SP a top pitcher?:');
 export const homeStarPitcher = prompt('Home SP a top pitcher?:');
 export const awayGoodPitcher = prompt('Away SP a good pitcher?:');
 export const homeGoodPitcher = prompt('Home SP a good pitcher?:');
 export const awaySpERA = prompt('Away SP era >= 4.75?:');
 export const homeSpERA = prompt('Home SP era >= 4.75?:');
-export const dayOrNight = prompt('is this a day game? (yes/no):');
+export const dayOrNight = prompt('is this a day game? (y/n):');
 const fahrenheit = prompt('Whats the Temp:');
-const runLine = prompt('line:');
+//const runLine = prompt('line:');
 const prsnlOpinion = prompt("Do you think the game will be 'over' or 'under'?:");
 
 
 
-let line = runLine
-let awayOdds = 133
-let homeOdds = -156
+let line = runLineFinder(runLines)
+let awayOdds = awayMoneyLineFinder(moneyLine)
+//console.log(awayMoneyLineFinder(moneyLine))
+let homeOdds = homeMoneyLineFinder(moneyLine)
+//console.log(homeMoneyLineFinder(moneyLine))
 //Away Team = OAK
 let away = {
     awayRuns: teamAvgAway(teamRuns), //Avg Runs scored in away games
@@ -317,6 +319,8 @@ import {espnParks} from '/Users/taylorbirchem/WebstormProjects/overunderpredicto
 import {teamRuns} from '/Users/taylorbirchem/WebstormProjects/overunderpredictormlb/data/runData.js';
 import {teamEra} from '/Users/taylorbirchem/WebstormProjects/overunderpredictormlb/data/teamEraData.js';
 import {oVoU} from '/Users/taylorbirchem/WebstormProjects/overunderpredictormlb/data/overUnderData.js';
+import {runLines} from '/Users/taylorbirchem/WebstormProjects/overunderpredictormlb/data/runLineData.js';
+import {moneyLine} from '/Users/taylorbirchem/WebstormProjects/overunderpredictormlb/data/moneyLineData.js';
 
 import {ballParkPalsRuns} from '/Users/taylorbirchem/WebstormProjects/overunderpredictormlb/functions/ballParkPalsFunctions.js';
 import {espnParkRuns} from '/Users/taylorbirchem/WebstormProjects/overunderpredictormlb/functions/espnParkFunctions.js';
@@ -327,3 +331,6 @@ import {hTeamEra} from '/Users/taylorbirchem/WebstormProjects/overunderpredictor
 import {aTeamEra} from '/Users/taylorbirchem/WebstormProjects/overunderpredictormlb/functions/awayTeamEraFunctions.js';
 import {hTeamOverUnder} from '/Users/taylorbirchem/WebstormProjects/overunderpredictormlb/functions/homeOverUnderFunctions.js';
 import {aTeamOverUnder} from '/Users/taylorbirchem/WebstormProjects/overunderpredictormlb/functions/awayOverUnderFunctions.js';
+import {runLineFinder} from '/Users/taylorbirchem/WebstormProjects/overunderpredictormlb/functions/runLineFunctions.js';
+import {homeMoneyLineFinder} from '/Users/taylorbirchem/WebstormProjects/overunderpredictormlb/functions/homeMoneyLineFunctions.js';
+import {awayMoneyLineFinder} from '/Users/taylorbirchem/WebstormProjects/overunderpredictormlb/functions/awayMoneyLineFunctions.js';

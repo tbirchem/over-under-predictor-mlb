@@ -5,107 +5,107 @@ let obj;
 let key;
 let value;
 
-function eraFinder(awayTeamName){
+function teamFinder(awayTeamName){
     if(awayTeamName === "red sox"){
-        return 'Boston'
+        return 'Boston Red Sox'
     }
     if(awayTeamName === "yankees"){
-        return 'NY Yankees'
+        return 'New York Yankees'
     }
     if(awayTeamName === "astros"){
-        return 'Houston'
+        return 'Houston Astros'
     }
     if(awayTeamName === "marlins"){
-        return 'Miami'
+        return 'Miami Marlins'
     }
     if(awayTeamName === "royals"){
-        return 'Kansas City'
+        return 'Kansas City Royals'
     }
     if(awayTeamName === "cubs"){
-        return 'Chi Cubs'
+        return 'Chicago Cubs'
     }
     if(awayTeamName === "giants"){
-        return 'SF Giants'
+        return 'San Francisco Giants'
     }
     if(awayTeamName === "guardians"){
-        return 'Cleveland'
+        return 'Cleveland Guardians'
     }
     if(awayTeamName === "phillies"){
-        return 'Philadelphia'
+        return 'Philadelphia Phillies'
     }
     if(awayTeamName === "orioles"){
-        return 'Baltimore'
+        return 'Baltimore Orioles'
     }
     if(awayTeamName === "rockies"){
-        return 'Colorado'
+        return 'Colorado Rockies'
     }
     if(awayTeamName === "blue jays"){
-        return 'Toronto'
+        return 'Toronto Blue Jays'
     }
     if(awayTeamName === "pirates"){
-        return 'Pittsburgh'
+        return 'Pittsburgh Pirates'
     }
     if(awayTeamName === "angels"){
-        return 'LA Angels'
+        return 'Los Angeles Angels'
     }
     if(awayTeamName === "brewers"){
-        return 'Milwaukee'
+        return 'Milwaukee Brewers'
     }
     if(awayTeamName === "mariners"){
-        return 'Seattle'
+        return 'Seattle Mariners'
     }
     if(awayTeamName === "cardinals"){
-        return 'St. Louis'
+        return 'St. Louis Cardinals'
     }
     if(awayTeamName === "twins"){
-        return 'Minnesota'
+        return 'Minnesota Twins'
     }
     if(awayTeamName === "nationals"){
-        return 'Washington'
+        return 'Washington Nationals'
     }
     if(awayTeamName === "padres"){
-        return 'San Diego'
+        return 'San Diego Padres'
     }
     if(awayTeamName === "reds"){
-        return 'Cincinnati'
+        return 'Cincinnati Reds'
     }
     if(awayTeamName === "braves"){
-        return 'Atlanta'
+        return 'Atlanta Braves'
     }
     if(awayTeamName === "diamond backs"){
-        return 'Arizona'
+        return 'Arizona Diamondbacks'
     }
     if(awayTeamName === "rays"){
-        return 'Tampa Bay'
+        return 'Tampa Bay Rays'
     }
     if(awayTeamName === "a's"){
-        return 'Oakland'
+        return 'Oakland Athletics'
     }
     if(awayTeamName === "rangers"){
-        return 'Texas'
+        return 'Texas Rangers'
     }
     if(awayTeamName === "white sox"){
-        return 'Chi Sox'
+        return 'Chicago White Sox'
     }
     if(awayTeamName === "dodgers"){
-        return 'LA Dodgers'
+        return 'Los Angeles Dodgers'
     }
     if(awayTeamName === "mets"){
-        return 'NY Mets'
+        return 'New York Mets'
     }
     if(awayTeamName === "tigers"){
-        return 'Detroit'
+        return 'Detroit Tigers'
     }
 }
 
-export function aTeamEra(teamEra) {
-    for (i = 0; i < teamEra.length; i++) {
-        obj = teamEra[i];
+export function awayMoneyLineFinder(moneyLine) {
+    for (i = 0; i < moneyLine.length; i++) {
+        obj = moneyLine[i];
         for (key in obj) {
             value = obj[key];
             // console.log("-" + key + ": " + value);
-            if (value + '' === eraFinder(awayTeamName)) {
-                return obj.teamEra;
+            if (value + '' === teamFinder(awayTeamName)) {
+                return obj.moneyLine;
             }
         }
     }
