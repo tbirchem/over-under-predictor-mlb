@@ -1,0 +1,68 @@
+{
+    "parks": [
+        {
+            "parkName": "Fenway Park",
+            "runPercentage": 16
+        },
+        {
+            "parkName": "Yankee Stadium",
+            "runPercentage": -5
+        },
+        {
+            "parkName": "Minute Maid Park",
+            "runPercentage": "-5%"
+        },
+        {
+            "parkName": "LoanDepot Park",
+            "runPercentage": "-5%"
+        },
+        {
+            "parkName": "Kauffman Stadium",
+            "runPercentage": "-6%"
+        },
+        {
+            "parkName": "Wrigley Field",
+            "runPercentage": "-7%"
+        },
+        {
+            "parkName": "Oracle Park",
+            "runPercentage": "-8%"
+        },
+        {
+            "parkName": "Progressive Field",
+            "runPercentage": "-8%"
+        },
+        {
+            "parkName": "Citizens Bank Park",
+            "runPercentage": "+12%"
+        },
+        {
+            "parkName": "Oriole Park",
+            "runPercentage": "+7%"
+        },
+        {
+            "parkName": "Yankee Stadium",
+            "runPercentage": "+7%"
+        },
+        {
+            "parkName": "Coors Field",
+            "runPercentage": "+5%"
+        },
+        {
+            "parkName": "Rogers Centre",
+            "runPercentage": "+1%"
+        },
+        {
+            "parkName": "PNC Park",
+            "runPercentage": "0%"
+        },
+        {
+            "parkName": "Angel Stadium",
+            "runPercentage": "0%"
+        },
+        {
+            "parkName": "American Family Fld",
+            "runPercentage": "-1%"
+        }
+    ]
+}
