@@ -99,7 +99,7 @@ function impliedTotalHome(homeOdds) {
     }
 }
 
-//Averages out score of teams last three games + Teams avg run scored in season
+// Averages out score of teams last three games + Teams avg run scored in season
 let awayAvg = (away.awayRuns + away.avgR + away.avg3 + home.tmERA + impliedTotalAway(awayOdds)) / 5
 
 
@@ -149,7 +149,7 @@ function homeRuns(homeAvg) {
     return homeAvg
 }
 
-//External Factors
+// External Factors
 
 function weather() {
     if (temp >= 75) {
@@ -293,6 +293,7 @@ function oU(newOverUnder) {
     }
 }
 
+// -- For Debugging --
 // console.log(awayAvg.toFixed(2))
 // console.log(homeAvg.toFixed(2))
 // console.log('Away Team Runs: ', awayRuns(awayAvg).toFixed(1))
