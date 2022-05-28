@@ -1,10 +1,5 @@
 import {homeTeamName} from "../main.js";
 
-// let i;
-// let obj;
-// let key;
-// let value;
-
 function teamFinder(homeTeamName){
     if(homeTeamName === "red sox"){
         return 'Boston Red Sox'

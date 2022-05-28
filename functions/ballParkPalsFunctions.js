@@ -99,7 +99,6 @@ function parkFinder(homeTeamName){
     }
 }
 
-
 export function ballParkPalsRuns(parks) {
     for (i = 0; i < parks.length; i++) {
         obj = parks[i];

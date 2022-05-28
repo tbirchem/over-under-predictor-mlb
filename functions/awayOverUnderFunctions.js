@@ -1,9 +1,5 @@
 import {awayTeamName, homeTeamName} from "../main.js";
 
-let i;
-let obj;
-let key;
-let value;
 
 function ouFinder(awayTeamName){
     if(awayTeamName === "red sox"){

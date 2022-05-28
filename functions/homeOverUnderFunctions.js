@@ -122,35 +122,3 @@ export function hTeamOverUnder(oVoU) {
 
 
 
-// export function hTeamOverUnder(oVoU) {
-//     for (let i = 0; i < oVoU.length; i++) {
-//         const obj = oVoU[i];
-//         for (const key in obj) {
-//            const value = obj[key];
-//             // console.log("-" + key + ": " + value);
-//             if (value + '' === ouFinder(homeTeamName)) {
-//                 obj.overPercentage;
-//                 if (obj.overPercentage >= .54) {
-//                     return 'way over';
-//                 } else if (obj.overPercentage >= .50 && obj.overPercentage < .54) {
-//                     return 'over'
-//                 }
-//                 for (let i = 0; i < oVoU.length; i++) {
-//                     const obj = oVoU[i];
-//                     for (const key in obj) {
-//                         const value = obj[key];
-//                         // console.log("-" + key + ": " + value);
-//                         if (value + '' === ouFinder(homeTeamName)) {
-//                             obj.underPercentage;
-//                             if (obj.underPercentage >= .60) {
-//                                 return 'way under';
-//                             }else if(obj.underPercentage <= .59 && obj.underPercentage >= .501){
-//                                 return 'under'
-//                             }
-//                         }
-//                     }
-//                 }
-//             }
-//         }
-//     }
-// }
