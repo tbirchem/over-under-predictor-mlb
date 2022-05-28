@@ -25,7 +25,6 @@ export const homeGoodPitcher = prompt('Home SP a good pitcher?:');
 // export const awaySpERA = prompt('Away SP era >= 4.75?:');
 // export const homeSpERA = prompt('Home SP era >= 4.75?:');
 export const dayOrNight = prompt('is this a day game?:');
-const fahrenheit = prompt('Whats the Temp:');
 //const runLine = prompt('line:');
 const prsnlOpinion = prompt("Do you think the game will be 'over' or 'under'?:");
 
