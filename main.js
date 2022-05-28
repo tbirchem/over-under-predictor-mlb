@@ -7,17 +7,17 @@ import {createRequire} from 'node:module';
 
 const require = createRequire(import.meta.url)
 const prompt = require('prompt-sync')();
-//
+
 
 export const awayTeamName = prompt('Away team:');
 export const homeTeamName = prompt('Home team:');
 console.log('The', awayTeamName, 'are', aTeamOverUnder(oVoU))
 console.log('The', homeTeamName, 'are', hTeamOverUnder(oVoU))
-// console.log(tempFinder(temperature))
+// console.log("Game time temp: ", tempFinder(temperature))
 // console.log('The', awayTeamName,"'s","sp's era is", awayEraFinder(sp) )
 // console.log('The', homeTeamName,"s","sp's era is", homeEraFinder(sp))
 console.log("--- Respond with a 't' or 'f' ---")
-//console.log("*if Away or Home team have a top pitcher, answer 'f' for the corresponding team having a good pitcher*")
+// console.log("*if Away or Home team have a top pitcher, answer 'f' for the corresponding team having a good pitcher*")
 export const awayStarPitcher = prompt('Away SP a top pitcher?:');
 export const homeStarPitcher = prompt('Home SP a top pitcher?:');
 export const awayGoodPitcher = prompt('Away SP a good pitcher?:');
@@ -25,60 +25,60 @@ export const homeGoodPitcher = prompt('Home SP a good pitcher?:');
 // export const awaySpERA = prompt('Away SP era >= 4.75?:');
 // export const homeSpERA = prompt('Home SP era >= 4.75?:');
 export const dayOrNight = prompt('is this a day game?:');
-//const runLine = prompt('line:');
+// const runLine = prompt('line:');
 const prsnlOpinion = prompt("Do you think the game will be 'over' or 'under'?:");
 
 
 let line = runLineFinder(runLines)
 let awayOdds = awayMoneyLineFinder(moneyLine)
 console.log("Away moneyLine:", awayOdds)
-//console.log(awayMoneyLineFinder(moneyLine))
+// console.log(awayMoneyLineFinder(moneyLine))
 let homeOdds = homeMoneyLineFinder(moneyLine)
 console.log("Home moneyLine:", homeOdds)
-//console.log(homeMoneyLineFinder(moneyLine))
-//Away Team = OAK
+// console.log(homeMoneyLineFinder(moneyLine))
+// Away Team = OAK
 let away = {
     awayRuns: teamAvgAway(teamRuns), //Avg Runs scored in away games
     avg3: awayTeamAvg3(teamRuns), //Avg runs scored over last 3 games
     avgR: awayTeamAvgR(teamRuns), //Avg runs scored over season
     tmERA: aTeamEra(teamEra)
 }//Team ERA
-//Home Team = LAA
+// Home Team = LAA
 let home = {
     homeRuns: teamAvgHome(teamRuns), //Avg Runs scored in home games
     avg3: teamAvg3(teamRuns), //Avg runs scored over last 3 games
     avgR: teamAvgR(teamRuns), //Avg runs scored over season
     tmERA: hTeamEra(teamEra),
 } //Team ERA
-//if top pitcher in the league = true, else = false
+// if top pitcher in the league = true, else = false
 let awayPitcher = aStarPitcher(awayStarPitcher);
 let homePitcher = hStarPitcher(homeStarPitcher);
-//if Good pitcher but not star = true
+// if Good pitcher but not star = true
 let goodAwayPitcher = aGoodPitcher(awayGoodPitcher);
 let goodHomePitcher = hGoodPitcher(homeGoodPitcher);
-//if Starting pitcher era is above 4.75 = true
+// if Starting pitcher era is above 4.75 = true
 let awayPitcherERA = awayEraFinder(sp);
 let homePitcherERA = homeEraFinder(sp);
-let umpireRating = '' //'hitter', 'pitcher', else ''
-//Park factors from Ball Park Pal
+let umpireRating = '' // 'hitter', 'pitcher', else ''
+// Park factors from Ball Park Pal
 let ballparkPal = (ballParkPalsRuns(parks) / 100) + 1
 let wind = '' // 'out', 'in', 'out L/R', else ''
 let windMph = '15+'// '15+ out', '15+ in', '15+ out L/R', '15+ straight L/R', else '15+'
-//Ball Park rating from ESPN
+// Ball Park rating from ESPN
 let ballParkRating = espnParkRuns(espnParks)
 let temp = tempFinder(temperature)
-console.log(temp)//if dome weather = 65
+// if dome weather = 65
 let myPrediction = prsnlOpinion //Will equal 'over' or 'under', based on what I think the game will end up being
-//Based on if team has more games where under or over hit
+// Based on if team has more games where under or over hit
 let awayTeamOU = aTeamOverUnder(oVoU)//'under', 'way under', 'over', 'way over'
 let homeTeamOU = hTeamOverUnder(oVoU)//'under', 'way under', 'over', 'way over'
 let dayGame = dayNight(dayOrNight) //if day game = 1.04, else = 1.0
 //(any start before 7pm ET)
 
 
-//No User Input needed
+// No User Input needed
 
-//implied totals
+// implied totals
 
 // console.log(impliedTotalHome(homeOdds))
 // console.log(impliedTotalAway(awayOdds))
@@ -196,7 +196,7 @@ function windsMph() {
 
 let initialPrediction = awayRuns(awayAvg) + homeRuns(homeAvg)
 
-//console.log("Proj total team runs (bfr weather):", initialPrediction)
+// console.log("Proj total team runs (bfr weather):", initialPrediction)
 
 function finalFinalPrediction(initialPrediction) {
     if (weather() === true) {
@@ -271,10 +271,10 @@ function finalFinalPrediction(initialPrediction) {
     return initialPrediction
 }
 
-//console.log("Proj total runs after weather):", finalFinalPrediction(initialPrediction))
+// console.log("Proj total runs after weather):", finalFinalPrediction(initialPrediction))
 
 let ballParkFinalRating = (ballparkPal + ballParkRating) / 2
-//console.log("Ballpark Final rating: ", ballParkFinalRating)
+// console.log("Ballpark Final rating: ", ballParkFinalRating)
 
 let overUnder = finalFinalPrediction(initialPrediction) * ballParkFinalRating
 
@@ -306,10 +306,6 @@ console.log('')
 console.log('Projected runs: ', newOverUnder)
 console.log('The line is: ', line)
 console.log(oU(newOverUnder))
-
-
-//////////////////////////////////////////////////////
-
 
 console.log('')
 
