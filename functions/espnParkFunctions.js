@@ -43,7 +43,7 @@ function espnParkFinder(homeTeamName){
         return 'Rogers Centre(Toronto, Ontario)'
     }
     if(homeTeamName === "pirates"){
-        return 'null(Pittsburgh, Pennsylvania'
+        return 'null(Pittsburgh, Pennsylvania)'
     }
     if(homeTeamName === "angels"){
         return 'null(Anaheim, California)'

@@ -1,9 +1,6 @@
 import {homeTeamName} from "../main.js";
 
-let i;
-let obj;
-let key;
-let value;
+
 
 function ouFinder(homeTeamName){
     if(homeTeamName === "red sox"){
@@ -99,34 +96,61 @@ function ouFinder(homeTeamName){
 }
 
 export function hTeamOverUnder(oVoU) {
-    for (i = 0; i < oVoU.length; i++) {
-        obj = oVoU[i];
-        for (key in obj) {
-            value = obj[key];
+    for(let i = 0; i < oVoU.length; i++) {
+        const obj = oVoU[i];
+        for (const key in obj) {
+            const value = obj[key];
             // console.log("-" + key + ": " + value);
             if (value + '' === ouFinder(homeTeamName)) {
                 obj.overPercentage;
-                if (obj.overPercentage >= .54) {
-                    return 'way over';
-                } else if (obj.overPercentage >= .50 && obj.overPercentage < .54) {
-                    return 'over'
-                }
-                for (i = 0; i < oVoU.length; i++) {
-                    obj = oVoU[i];
-                    for (key in obj) {
-                        value = obj[key];
-                        // console.log("-" + key + ": " + value);
-                        if (value + '' === ouFinder(homeTeamName)) {
-                            obj.underPercentage;
-                            if (obj.underPercentage >= .60) {
-                                return 'way under';
-                            }else if(obj.underPercentage <= .59 && obj.underPercentage >= .501){
-                                return 'under'
-                            }
-                        }
-                    }
-                }
+            if (obj.overPercentage >= 54) {
+                return "way over";
+            }
+            else if(obj.overPercentage < 54 && obj.overPercentage >= 50){
+                return 'over'
+            }
+            else if(obj.underPercentage >= 59){
+                return 'way under'
+            }
+            else if(obj.underPercentage < 59 && obj.underPercentage > 50){
+                return 'under'
+            }
             }
         }
     }
 }
+
+
+
+// export function hTeamOverUnder(oVoU) {
+//     for (let i = 0; i < oVoU.length; i++) {
+//         const obj = oVoU[i];
+//         for (const key in obj) {
+//            const value = obj[key];
+//             // console.log("-" + key + ": " + value);
+//             if (value + '' === ouFinder(homeTeamName)) {
+//                 obj.overPercentage;
+//                 if (obj.overPercentage >= .54) {
+//                     return 'way over';
+//                 } else if (obj.overPercentage >= .50 && obj.overPercentage < .54) {
+//                     return 'over'
+//                 }
+//                 for (let i = 0; i < oVoU.length; i++) {
+//                     const obj = oVoU[i];
+//                     for (const key in obj) {
+//                         const value = obj[key];
+//                         // console.log("-" + key + ": " + value);
+//                         if (value + '' === ouFinder(homeTeamName)) {
+//                             obj.underPercentage;
+//                             if (obj.underPercentage >= .60) {
+//                                 return 'way under';
+//                             }else if(obj.underPercentage <= .59 && obj.underPercentage >= .501){
+//                                 return 'under'
+//                             }
+//                         }
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }

@@ -1,4 +1,4 @@
-import {awayTeamName} from "../main.js";
+import {awayTeamName, homeTeamName} from "../main.js";
 
 let i;
 let obj;
@@ -99,32 +99,24 @@ function ouFinder(awayTeamName){
 }
 
 export function aTeamOverUnder(oVoU) {
-    for (i = 0; i < oVoU.length; i++) {
-        obj = oVoU[i];
-        for (key in obj) {
-            value = obj[key];
+    for(let i = 0; i < oVoU.length; i++) {
+        const obj = oVoU[i];
+        for (const key in obj) {
+            const value = obj[key];
             // console.log("-" + key + ": " + value);
             if (value + '' === ouFinder(awayTeamName)) {
                 obj.overPercentage;
-                if (obj.overPercentage >= .54) {
-                    return 'way over';
-                } else if (obj.overPercentage >= .50 && obj.overPercentage < .54) {
+                if (obj.overPercentage >= 54) {
+                    return "way over";
+                }
+                else if(obj.overPercentage < 54 && obj.overPercentage >= 50){
                     return 'over'
                 }
-                for (i = 0; i < oVoU.length; i++) {
-                    obj = oVoU[i];
-                    for (key in obj) {
-                        value = obj[key];
-                        // console.log("-" + key + ": " + value);
-                        if (value + '' === ouFinder(awayTeamName)) {
-                            obj.underPercentage;
-                            if (obj.underPercentage >= .60) {
-                                return 'way under';
-                            }else if(obj.underPercentage <= .59 && obj.underPercentage >= .501){
-                                return 'under'
-                            }
-                        }
-                    }
+                else if(obj.underPercentage >= 59){
+                    return 'way under'
+                }
+                else if(obj.underPercentage < 59 && obj.underPercentage > 50){
+                    return 'under'
                 }
             }
         }

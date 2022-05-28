@@ -1,152 +1,152 @@
 export let oVoU = [
     {
-        "teamName": "Arizona",
-        "overPercentage": 0.43,
-        "underPercentage": 0.57
-    },
-    {
-        "teamName": "NY Mets",
-        "overPercentage": 0.48,
-        "underPercentage": 0.53
-    },
-    {
-        "teamName": "Washington",
-        "overPercentage": 0.46,
-        "underPercentage": 0.54
-    },
-    {
-        "teamName": "Detroit",
-        "overPercentage": 0.31,
-        "underPercentage": 0.69
-    },
-    {
-        "teamName": "Cincinnati",
-        "overPercentage": 0.59,
-        "underPercentage": 0.41
-    },
-    {
-        "teamName": "Chi Sox",
-        "overPercentage": 0.41,
-        "underPercentage": 0.59
-    },
-    {
-        "teamName": "Cleveland",
-        "overPercentage": 0.54,
-        "underPercentage": 0.46
-    },
-    {
-        "teamName": "Seattle",
-        "overPercentage": 0.54,
-        "underPercentage": 0.46
-    },
-    {
-        "teamName": "Oakland",
-        "overPercentage": 0.4,
-        "underPercentage": 0.61
-    },
-    {
-        "teamName": "San Diego",
-        "overPercentage": 0.49,
-        "underPercentage": 0.51
-    },
-    {
-        "teamName": "Texas",
-        "overPercentage": 0.47,
-        "underPercentage": 0.53
-    },
-    {
-        "teamName": "Philadelphia",
-        "overPercentage": 0.51,
-        "underPercentage": 0.49
-    },
-    {
-        "teamName": "Boston",
-        "overPercentage": 0.42,
-        "underPercentage": 0.58
-    },
-    {
-        "teamName": "Miami",
-        "overPercentage": 0.49,
-        "underPercentage": 0.51
-    },
-    {
-        "teamName": "LA Angels",
-        "overPercentage": 0.5,
-        "underPercentage": 0.5
+        "teamName": "Atlanta",
+        "overPercentage": 60.50,
+        "underPercentage": 39.50
     },
     {
         "teamName": "Chi Cubs",
-        "overPercentage": 0.49,
-        "underPercentage": 0.51
-    },
-    {
-        "teamName": "Toronto",
-        "overPercentage": 0.35,
-        "underPercentage": 0.65
+        "overPercentage": 51.20,
+        "underPercentage": 48.80
     },
     {
         "teamName": "St. Louis",
-        "overPercentage": 0.51,
-        "underPercentage": 0.49
+        "overPercentage": 51.20,
+        "underPercentage": 48.80
     },
     {
-        "teamName": "Houston",
-        "overPercentage": 0.26,
-        "underPercentage": 0.74
-    },
-    {
-        "teamName": "Colorado",
-        "overPercentage": 0.56,
-        "underPercentage": 0.44
-    },
-    {
-        "teamName": "Milwaukee",
-        "overPercentage": 0.5,
-        "underPercentage": 0.5
-    },
-    {
-        "teamName": "Baltimore",
-        "overPercentage": 0.37,
-        "underPercentage": 0.63
-    },
-    {
-        "teamName": "NY Yankees",
-        "overPercentage": 0.44,
-        "underPercentage": 0.56
-    },
-    {
-        "teamName": "Tampa Bay",
-        "overPercentage": 0.47,
-        "underPercentage": 0.53
-    },
-    {
-        "teamName": "Kansas City",
-        "overPercentage": 0.53,
-        "underPercentage": 0.47
-    },
-    {
-        "teamName": "Atlanta",
-        "overPercentage": 0.58,
-        "underPercentage": 0.42
+        "teamName": "Miami",
+        "overPercentage": 50.00,
+        "underPercentage": 50.00
     },
     {
         "teamName": "LA Dodgers",
-        "overPercentage": 0.47,
-        "underPercentage": 0.53
+        "overPercentage": 48.80,
+        "underPercentage": 51.20
     },
     {
-        "teamName": "Pittsburgh",
-        "overPercentage": 0.43,
-        "underPercentage": 0.57
+        "teamName": "Washington",
+        "overPercentage": 48.80,
+        "underPercentage": 51.20
+    },
+    {
+        "teamName": "LA Angels",
+        "overPercentage": 48.80,
+        "underPercentage": 51.20
+    },
+    {
+        "teamName": "Tampa Bay",
+        "overPercentage": 47.60,
+        "underPercentage": 52.40
+    },
+    {
+        "teamName": "Texas",
+        "overPercentage": 46.20,
+        "underPercentage": 53.90
+    },
+    {
+        "teamName": "Arizona",
+        "overPercentage": 45.70,
+        "underPercentage": 54.40
+    },
+    {
+        "teamName": "NY Yankees",
+        "overPercentage": 45.70,
+        "underPercentage": 54.40
+    },
+    {
+        "teamName": "Cincinnati",
+        "overPercentage": 59.10,
+        "underPercentage": 40.90
+    },
+    {
+        "teamName": "San Diego",
+        "overPercentage": 45.50,
+        "underPercentage": 54.60
+    },
+    {
+        "teamName": "Boston",
+        "overPercentage": 45.20,
+        "underPercentage": 54.80
     },
     {
         "teamName": "Minnesota",
-        "overPercentage": 0.45,
-        "underPercentage": 0.55
+        "overPercentage": 44.20,
+        "underPercentage": 55.80
+    },
+    {
+        "teamName": "Milwaukee",
+        "overPercentage": 44.20,
+        "underPercentage": 55.80
+    },
+    {
+        "teamName": "Chi Sox",
+        "overPercentage": 42.90,
+        "underPercentage": 57.10
+    },
+    {
+        "teamName": "Pittsburgh",
+        "overPercentage": 42.10,
+        "underPercentage": 57.90
+    },
+    {
+        "teamName": "Oakland",
+        "overPercentage": 41.90,
+        "underPercentage": 58.10
+    },
+    {
+        "teamName": "Baltimore",
+        "overPercentage": 40.00,
+        "underPercentage": 60.00
+    },
+    {
+        "teamName": "Toronto",
+        "overPercentage": 38.60,
+        "underPercentage": 61.40
+    },
+    {
+        "teamName": "Detroit",
+        "overPercentage": 31.00,
+        "underPercentage": 69.10
     },
     {
         "teamName": "SF Giants",
-        "overPercentage": 0.56,
-        "underPercentage": 0.44
+        "overPercentage": 58.10,
+        "underPercentage": 41.90
+    },
+    {
+        "teamName": "Houston",
+        "overPercentage": 26.10,
+        "underPercentage": 73.90
+    },
+    {
+        "teamName": "Colorado",
+        "overPercentage": 55.80,
+        "underPercentage": 44.20
+    },
+    {
+        "teamName": "Kansas City",
+        "overPercentage": 54.80,
+        "underPercentage": 45.20
+    },
+    {
+        "teamName": "Philadelphia",
+        "overPercentage": 54.60,
+        "underPercentage": 45.50
+    },
+    {
+        "teamName": "Seattle",
+        "overPercentage": 53.30,
+        "underPercentage": 46.70
+    },
+    {
+        "teamName": "Cleveland",
+        "overPercentage": 52.50,
+        "underPercentage": 47.50
+    },
+    {
+        "teamName": "NY Mets",
+        "overPercentage": 52.30,
+        "underPercentage": 47.70
     }
 ]

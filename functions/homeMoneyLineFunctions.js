@@ -1,9 +1,9 @@
 import {homeTeamName} from "../main.js";
 
-let i;
-let obj;
-let key;
-let value;
+// let i;
+// let obj;
+// let key;
+// let value;
 
 function teamFinder(homeTeamName){
     if(homeTeamName === "red sox"){
@@ -99,10 +99,10 @@ function teamFinder(homeTeamName){
 }
 
 export function homeMoneyLineFinder(moneyLine) {
-    for (i = 0; i < moneyLine.length; i++) {
-        obj = moneyLine[i];
-        for (key in obj) {
-            value = obj[key];
+    for (let i = 0; i < moneyLine.length; i++) {
+        const obj = moneyLine[i];
+        for (const key in obj) {
+            const value = obj[key];
             // console.log("-" + key + ": " + value);
             if (value + '' === teamFinder(homeTeamName)) {
                 return obj.moneyLine;

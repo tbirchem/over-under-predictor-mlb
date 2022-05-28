@@ -1,4 +1,4 @@
-import {awaySpERA, dayOrNight, homeSpERA} from "../main.js";
+import {dayOrNight} from "../main.js";
 import e from "express";
 
 export function aStarPitcher(awayStarPitcher){
@@ -56,10 +56,10 @@ export function hPitcherERA(homeSpERA){
 }
 
 export function dayNight(dayOrNight){
-    if(dayOrNight === 'y'){
+    if(dayOrNight === 't'){
         return 1.04;
     }
-    if(dayOrNight === 'n'){
+    if(dayOrNight === 'f'){
         return 1;
     }
 }
