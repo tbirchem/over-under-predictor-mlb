@@ -3,94 +3,94 @@ import {homeTeamName} from "../main.js";
 
 function teamFinder(homeTeamName){
     if(homeTeamName === "red sox"){
-        return 'Boston'
+        return 'Red sox'
     }
     if(homeTeamName === "yankees"){
-        return 'N.Y. Yankees'
+        return 'Yankees'
     }
     if(homeTeamName === "astros"){
-        return 'Houston'
+        return 'Astros'
     }
     if(homeTeamName === "marlins"){
-        return 'Miami'
+        return 'Marlins'
     }
     if(homeTeamName === "royals"){
-        return 'Kansas City'
+        return 'Royals'
     }
     if(homeTeamName === "cubs"){
-        return 'Chi Cubs'
+        return 'Cubs'
     }
     if(homeTeamName === "giants"){
-        return 'San Francisco'
+        return 'Giants'
     }
     if(homeTeamName === "guardians"){
-        return 'Cleveland'
+        return 'Guardians'
     }
     if(homeTeamName === "phillies"){
-        return 'Philadelphia'
+        return 'Phillies'
     }
     if(homeTeamName === "orioles"){
-        return 'Baltimore'
+        return 'Orioles'
     }
     if(homeTeamName === "rockies"){
-        return 'Colorado'
+        return 'Rockies'
     }
     if(homeTeamName === "blue jays"){
-        return 'Toronto'
+        return 'Blue Jays'
     }
     if(homeTeamName === "pirates"){
-        return 'Pittsburgh'
+        return 'Pirates'
     }
     if(homeTeamName === "angels"){
-        return 'LA Angels'
+        return 'Angels'
     }
     if(homeTeamName === "brewers"){
-        return 'Milwaukee'
+        return 'Brewers'
     }
     if(homeTeamName === "mariners"){
-        return 'Seattle'
+        return 'Mariners'
     }
     if(homeTeamName === "cardinals"){
-        return 'St. Louis'
+        return 'Cardinals'
     }
     if(homeTeamName === "twins"){
-        return 'Minnesota'
+        return 'Twins'
     }
     if(homeTeamName === "nationals"){
-        return 'Washington'
+        return 'Nationals'
     }
     if(homeTeamName === "padres"){
-        return 'San Diego'
+        return 'Padres'
     }
     if(homeTeamName === "reds"){
-        return 'Cincinnati'
+        return 'Reds'
     }
     if(homeTeamName === "braves"){
         return 'Atlanta'
     }
     if(homeTeamName === "diamond backs"){
-        return 'Arizona'
+        return 'Diamondbacks'
     }
     if(homeTeamName === "rays"){
-        return 'Tampa Bay'
+        return 'Rays'
     }
     if(homeTeamName === "a's"){
-        return 'Oakland'
+        return 'Athletics'
     }
     if(homeTeamName === "rangers"){
-        return 'Texas'
+        return 'Rangers'
     }
     if(homeTeamName === "white sox"){
-        return 'Chi Sox'
+        return 'White Sox'
     }
     if(homeTeamName === "dodgers"){
-        return 'LA Dodgers'
+        return 'Dodgers'
     }
     if(homeTeamName === "mets"){
-        return 'N.Y. Mets'
+        return 'Mets'
     }
     if(homeTeamName === "tigers"){
-        return 'Detroit'
+        return 'Tigers'
     }
 }
 

@@ -1,6 +1,7 @@
 /*
 * Author Taylor Birchem
-* Last updated 05/28/2022
+* node.js version (14.17)
+* last updated 06.16.22
  */
 
 import {createRequire} from 'node:module';
@@ -14,14 +15,13 @@ export const homeTeamName = prompt('Home team:');
 console.log('The', awayTeamName, 'are', aTeamOverUnder(oVoU))
 console.log('The', homeTeamName, 'are', hTeamOverUnder(oVoU))
 // console.log("Game time temp: ", tempFinder(temperature))
+console.log("Wind direction: ", windDirection(parks))
+console.log("Wind MPH: ", windMPH2(parks), windMPH(parks))
+console.log("Ball Park rating: ", espnParkRuns(espnParks))
 // console.log('The', awayTeamName,"'s","sp's era is", awayEraFinder(sp) )
 // console.log('The', homeTeamName,"s","sp's era is", homeEraFinder(sp))
-console.log("--- Respond with a 't' or 'f' ---")
+// console.log("--- Respond with a 't' or 'f' ---")
 // console.log("*if Away or Home team have a top pitcher, answer 'f' for the corresponding team having a good pitcher*")
-export const awayStarPitcher = prompt('Away SP a top pitcher?:');
-export const homeStarPitcher = prompt('Home SP a top pitcher?:');
-export const awayGoodPitcher = prompt('Away SP a good pitcher?:');
-export const homeGoodPitcher = prompt('Home SP a good pitcher?:');
 // export const awaySpERA = prompt('Away SP era >= 4.75?:');
 // export const homeSpERA = prompt('Home SP era >= 4.75?:');
 export const dayOrNight = prompt('is this a day game?:');
@@ -38,42 +38,54 @@ console.log("Home moneyLine:", homeOdds)
 // console.log(homeMoneyLineFinder(moneyLine))
 // Away Team = OAK
 let away = {
-    awayRuns: teamAvgAway(teamRuns), //Avg Runs scored in away games
-    avg3: awayTeamAvg3(teamRuns), //Avg runs scored over last 3 games
-    avgR: awayTeamAvgR(teamRuns), //Avg runs scored over season
-    tmERA: aTeamEra(teamEra)
-}//Team ERA
+    awayRuns: teamAvgAway(teamRuns), // Avg Runs scored in away games
+    avg3: awayTeamAvg3(teamRuns), // Avg runs scored over last 3 games
+    avgR: awayTeamAvgR(teamRuns), // Avg runs scored over season
+    tmERA: aTeamEra(teamEra) // Team ERA
+}
+
 // Home Team = LAA
 let home = {
-    homeRuns: teamAvgHome(teamRuns), //Avg Runs scored in home games
-    avg3: teamAvg3(teamRuns), //Avg runs scored over last 3 games
-    avgR: teamAvgR(teamRuns), //Avg runs scored over season
-    tmERA: hTeamEra(teamEra),
-} //Team ERA
-// if top pitcher in the league = true, else = false
-let awayPitcher = aStarPitcher(awayStarPitcher);
-let homePitcher = hStarPitcher(homeStarPitcher);
-// if Good pitcher but not star = true
-let goodAwayPitcher = aGoodPitcher(awayGoodPitcher);
-let goodHomePitcher = hGoodPitcher(homeGoodPitcher);
+    homeRuns: teamAvgHome(teamRuns), // Avg Runs scored in home games
+    avg3: teamAvg3(teamRuns), // Avg runs scored over last 3 games
+    avgR: teamAvgR(teamRuns), // Avg runs scored over season
+    tmERA: hTeamEra(teamEra), // Team ERA
+}
+
+// starting pitcher era >= 1.30 && starting pitcher era <= 3.45
+let topAwayPitcher = awayEraFinder(sp);
+let topHomePitcher = homeEraFinder(sp);
+
+// starting pitcher era >= 3.46 && starting pitcher era <= 4.25
+let goodAwayPitcher = awayEraFinder(sp);
+let goodHomePitcher = homeEraFinder(sp);
+
 // if Starting pitcher era is above 4.75 = true
-let awayPitcherERA = awayEraFinder(sp);
-let homePitcherERA = homeEraFinder(sp);
-let umpireRating = '' // 'hitter', 'pitcher', else ''
+let badAwayPitcher = awayEraFinder(sp);
+let badHomePitcher = homeEraFinder(sp);
+
 // Park factors from Ball Park Pal
 let ballparkPal = (ballParkPalsRuns(parks) / 100) + 1
-let wind = '' // 'out', 'in', 'out L/R', else ''
-let windMph = '15+'// '15+ out', '15+ in', '15+ out L/R', '15+ straight L/R', else '15+'
+let wind = windDirection(parks) // 'out', 'in'
+let windMph = windMPH(parks) // '15+ out', '15+ in'
+let windMph2 = windMPH2(parks) //'10+ out, '10+ in
+
 // Ball Park rating from ESPN
 let ballParkRating = espnParkRuns(espnParks)
-let temp = tempFinder(temperature)
+
 // if dome weather = 65
-let myPrediction = prsnlOpinion //Will equal 'over' or 'under', based on what I think the game will end up being
-// Based on if team has more games where under or over hit
-let awayTeamOU = aTeamOverUnder(oVoU)//'under', 'way under', 'over', 'way over'
-let homeTeamOU = hTeamOverUnder(oVoU)//'under', 'way under', 'over', 'way over'
-let dayGame = dayNight(dayOrNight) //if day game = 1.04, else = 1.0
-//(any start before 7pm ET)
+let temp = tempFinder(temperature)
+
+let myPrediction = prsnlOpinion // Will equal 'over' or 'under', based on what I think the game will end up being
+
+// Based on if team has more games where it went under or over
+//'under', 'way under', 'over', 'way over'
+let awayTeamOU = aTeamOverUnder(oVoU)
+let homeTeamOU = hTeamOverUnder(oVoU)
+
+// if day game = 1.04, else = 1.0
+let dayGame = dayNight(dayOrNight)
+// (any start before 6pm ET)
 
 
 // No User Input needed
@@ -106,11 +118,11 @@ let awayAvg = (away.awayRuns + away.avgR + away.avg3 + home.tmERA + impliedTotal
 let homeAvg = (home.homeRuns + home.avgR + home.avg3 + away.tmERA + impliedTotalHome(homeOdds)) / 5
 
 function awayRuns(awayAvg) {
-    if (homePitcher === true) {
-        awayAvg = awayAvg - 1.10
+    if (topHomePitcher >= 1.30 && topHomePitcher <= 3.45) {
+        awayAvg = awayAvg - 1
     }
-    if (goodHomePitcher === true) {
-        awayAvg = awayAvg - .50
+    if (goodHomePitcher >= 3.46 && goodHomePitcher <= 4.25) {
+        awayAvg = awayAvg - .40
     }
     if (home.tmERA <= 3.35) {
         awayAvg = awayAvg - .30
@@ -121,18 +133,18 @@ function awayRuns(awayAvg) {
     if (home.tmERA >= 3.75 && home.tmERA < 4) {
         awayAvg = awayAvg + .22
     }
-    if (homePitcherERA >= 4.75) {
+    if (badHomePitcher >= 4.75) {
         awayAvg = awayAvg + .40
     }
     return awayAvg
 }
 
 function homeRuns(homeAvg) {
-    if (awayPitcher === true) {
-        homeAvg = homeAvg - 1.10
+    if (topAwayPitcher >= 1.30 && topAwayPitcher <= 3.45) {
+        homeAvg = homeAvg - 1
     }
-    if (goodAwayPitcher === true) {
-        homeAvg = homeAvg - .50
+    if (goodAwayPitcher >= 3.46 && goodAwayPitcher <= 4.25) {
+        homeAvg = homeAvg - .40
     }
     if (away.tmERA <= 3.35) {
         homeAvg = homeAvg - .30
@@ -143,7 +155,7 @@ function homeRuns(homeAvg) {
     if (away.tmERA >= 3.75 && away.tmERA < 4) {
         homeAvg = homeAvg + .22
     }
-    if (awayPitcherERA >= 4.75) {
+    if (badAwayPitcher >= 4.75) {
         homeAvg = homeAvg + .40
     }
     return homeAvg
@@ -182,14 +194,14 @@ function windsMph() {
     if (windMph === '15+ out') {
         return 'great'
     }
-    if (windMph === '15+ out L/R') {
-        return 'decent'
-    }
     if (windMph === '15+ in') {
         return 'yikes'
     }
-    if (windMph === '15+ straight L/R') {
-        return "little yikes"
+    if (windMph2 === '10+ out') {
+        return "pretty good"
+    }
+    if (windMph2 === '10+ in') {
+        return "pretty yikes"
     }
     return windsMph
 }
@@ -212,31 +224,22 @@ function finalFinalPrediction(initialPrediction) {
         initialPrediction = initialPrediction - 0.40
     }
     if (windy() === 'bad') {
-        initialPrediction = initialPrediction - .60
+        initialPrediction = initialPrediction - .55
     }
     if (windy() === 'really good') {
-        initialPrediction = initialPrediction + .50
-    }
-    if (windy() === 'good') {
-        initialPrediction = initialPrediction + .35
+        initialPrediction = initialPrediction + .40
     }
     if (windsMph() === 'great') {
         initialPrediction = initialPrediction + .45
     }
-    if (windsMph() === 'decent') {
-        initialPrediction = initialPrediction + .12
-    }
     if (windsMph() === 'yikes') {
-        initialPrediction = initialPrediction - 1.28
+        initialPrediction = initialPrediction - 1.10
     }
-    if (windsMph() === 'little yikes') {
-        initialPrediction = initialPrediction - .35
+    if (windsMph() === 'pretty good') {
+        initialPrediction = initialPrediction + .30
     }
-    if (umpireRating === 'pitcher') {
-        initialPrediction = initialPrediction - .17
-    }
-    if (umpireRating === 'hitter') {
-        initialPrediction = initialPrediction + .20
+    if (windsMph() === 'pretty yikes') {
+        initialPrediction = initialPrediction - 0.75
     }
     if (myPrediction === 'over') {
         initialPrediction = initialPrediction + .42
@@ -332,7 +335,7 @@ import {sp} from "./data/spERAData.js";
 import {temperature} from "./data/tempData.js";
 
 import {
-    ballParkPalsRuns
+    ballParkPalsRuns, windDirection, windMPH, windMPH2
 } from '/Users/taylorbirchem/WebstormProjects/overunderpredictormlb/functions/ballParkPalsFunctions.js';
 import {
     espnParkRuns
@@ -344,7 +347,7 @@ import {
     awayTeamAvgR, awayTeamAvg3, teamAvgAway
 } from '/Users/taylorbirchem/WebstormProjects/overunderpredictormlb/functions/awayRunsFunctions.js';
 import {
-    aStarPitcher, hStarPitcher, aGoodPitcher, hGoodPitcher, dayNight
+    dayNight
 } from '/Users/taylorbirchem/WebstormProjects/overunderpredictormlb/functions/inputFunctions.js';
 import {
     hTeamEra

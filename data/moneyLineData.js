@@ -1,122 +1,131 @@
 export let moneyLine = [
     {
-        "teamName": "Kansas City Royals",
-        "moneyLine": 135
+        "teamName": "Chicago White Sox",
+        "moneyLine": 140
     },
     {
-        "teamName": "Philadelphia Phillies",
+        "teamName": "St. Louis Cardinals",
         "moneyLine": 100
     },
     {
-        "teamName": "Toronto Blue Jays",
-        "moneyLine": -110
+        "teamName": "Tampa Bay Rays",
+        "moneyLine": -160
     },
     {
-        "teamName": "Pittsburgh Pirates",
-        "moneyLine": 190
-    },
-    {
-        "teamName": "Houston Astros",
-        "moneyLine": -125
+        "teamName": "Philadelphia Phillies",
+        "moneyLine": -190
     },
     {
         "teamName": "Milwaukee Brewers",
         "moneyLine": -115
     },
     {
-        "teamName": "Texas Rangers",
-        "moneyLine": -115
-    },
-    {
-        "teamName": "Miami Marlins",
-        "moneyLine": 105
-    },
-    {
-        "teamName": "New York Yankees",
-        "moneyLine": -150
-    },
-    {
-        "teamName": "Los Angeles Dodgers",
-        "moneyLine": -185
-    },
-    {
-        "teamName": "Chicago Cubs",
-        "moneyLine": 120
-    },
-    {
-        "teamName": "Minnesota Twins",
-        "moneyLine": -160
-    },
-    {
         "teamName": "San Diego Padres",
-        "moneyLine": -250
-    },
-    {
-        "teamName": "Seattle Mariners",
-        "moneyLine": 105
-    },
-    {
-        "teamName": "St. Louis Cardinals",
-        "moneyLine": -105
-    },
-    {
-        "teamName": "Oakland Athletics",
-        "moneyLine": -105
-    },
-    {
-        "teamName": "Atlanta Braves",
-        "moneyLine": -125
-    },
-    {
-        "teamName": "Tampa Bay Rays",
-        "moneyLine": 125
-    },
-    {
-        "teamName": "Arizona Diamondbacks",
-        "moneyLine": 150
-    },
-    {
-        "teamName": "Chicago White Sox",
         "moneyLine": -145
     },
     {
-        "teamName": "New York Mets",
-        "moneyLine": -120
-    },
-    {
-        "teamName": "Los Angeles Angels",
-        "moneyLine": -110
-    },
-    {
-        "teamName": "Cleveland Guardians",
-        "moneyLine": -160
-    },
-    {
-        "teamName": "Detroit Tigers",
-        "moneyLine": 140
-    },
-    {
         "teamName": "San Francisco Giants",
-        "moneyLine": -180
+        "moneyLine": -200
     },
     {
-        "teamName": "Cincinnati Reds",
-        "moneyLine": 160
+        "teamName": "New York Yankees",
+        "moneyLine": -115
     },
     {
-        "teamName": "Colorado Rockies",
+        "teamName": "Atlanta Braves",
+        "moneyLine": -185
+    },
+    {
+        "teamName": "Texas Rangers",
         "moneyLine": 105
     },
     {
-        "teamName": "Washington Nationals",
+        "teamName": "Philadelphia Phillies",
+        "moneyLine": -160
+    },
+    {
+        "teamName": "Houston Astros",
+        "moneyLine": -165
+    },
+    {
+        "teamName": "Detroit Tigers",
         "moneyLine": -125
     },
     {
         "teamName": "Boston Red Sox",
-        "moneyLine": -160
+        "moneyLine": -120
+    },
+    {
+        "teamName": "Chicago Cubs",
+        "moneyLine": 150
+    },
+    {
+        "teamName": "Colorado Rockies",
+        "moneyLine": 120
     },
     {
         "teamName": "Baltimore Orioles",
-        "moneyLine": 140
+        "moneyLine": 135
+    },
+    {
+        "teamName": "Pittsburgh Pirates",
+        "moneyLine": 170
+    },
+    {
+        "teamName": "Washington Nationals",
+        "moneyLine": 155
+    },
+    {
+        "teamName": "Cincinnati Reds",
+        "moneyLine": -105
+    },
+    {
+        "teamName": "Toronto Blue Jays",
+        "moneyLine": -105
+    },
+    {
+        "teamName": "Washington Nationals",
+        "moneyLine": 135
+    },
+    {
+        "teamName": "New York Mets",
+        "moneyLine": -190
+    },
+    {
+        "teamName": "Miami Marlins",
+        "moneyLine": 170
+    },
+    {
+        "teamName": "Kansas City Royals",
+        "moneyLine": 150
+    },
+    {
+        "teamName": "Oakland Athletics",
+        "moneyLine": -170
+    },
+    {
+        "teamName": "Minnesota Twins",
+        "moneyLine": 110
+    },
+    {
+        "teamName": "Arizona Diamondbacks",
+        "moneyLine": 110
+    },
+    {
+        "teamName": "Los Angeles Angels",
+        "moneyLine": 110
+    },
+    {
+        "teamName": "Seattle Mariners",
+        "moneyLine": -130
+    },
+    {
+        "teamName": "Cleveland Guardians",
+        "moneyLine": 260
+    },
+    {
+        "teamName": "Los Angeles Dodgers",
+        "moneyLine": -280
     }
 ]
+

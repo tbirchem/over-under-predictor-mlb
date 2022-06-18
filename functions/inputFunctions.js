@@ -57,7 +57,7 @@ export function hPitcherERA(homeSpERA){
 
 export function dayNight(dayOrNight){
     if(dayOrNight === 't'){
-        return 1.04;
+        return 1.015;
     }
     if(dayOrNight === 'f'){
         return 1;

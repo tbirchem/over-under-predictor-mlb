@@ -1,70 +1,66 @@
 export let temperature = [
     {
+        "homeTeamName": "Orioles",
+        "temp": 65
+    },
+    {
+        "homeTeamName": "Nationals",
+        "temp": 65
+    },
+    {
+        "homeTeamName": "Blue Jays",
+        "temp": 65
+    },
+    {
+        "homeTeamName": "Astros",
+        "temp": 65
+    },
+    {
         "homeTeamName": "Reds",
-        "temp": 65
-    },
-    {
-        "homeTeamName": "Rays",
-        "temp": 65
-    },
-    {
-        "homeTeamName": "Nationals",
-        "temp": 65
-    },
-    {
-        "homeTeamName": "Nationals",
-        "temp": 79
-    },
-    {
-        "homeTeamName": "Tigers",
-        "temp": 65
-    },
-    {
-        "homeTeamName": "Braves",
-        "temp": 65
-    },
-    {
-        "homeTeamName": "Red Sox",
-        "temp": 66
-    },
-    {
-        "homeTeamName": "Mets",
-        "temp": 73
-    },
-    {
-        "homeTeamName": "Angels",
-        "temp": 67
-    },
-    {
-        "homeTeamName": "Twins",
-        "temp": 65
-    },
-    {
-        "homeTeamName": "Red Sox",
-        "temp": 65
+        "temp": 88
     },
     {
         "homeTeamName": "Mariners",
         "temp": 65
     },
     {
+        "homeTeamName": "Tigers",
+        "temp": 81
+    },
+    {
+        "homeTeamName": "Red Sox",
+        "temp": 79
+    },
+    {
+        "homeTeamName": "Nationals",
+        "temp": 92
+    },
+    {
+        "homeTeamName": "Rockies",
+        "temp": 87
+    },
+    {
+        "homeTeamName": "Cubs",
+        "temp": 79
+    },
+    {
         "homeTeamName": "Diamondbacks",
         "temp": 65
     },
     {
-        "homeTeamName": "Cardinals",
-        "temp": 65
+        "homeTeamName": "Mets",
+        "temp": 86
     },
     {
-        "homeTeamName": "Padres",
-        "temp": 64
-    },
-    {
-        "homeTeamName": "White Sox",
-        "temp": 70
+        "homeTeamName": "Dodgers",
+        "temp": 68
     },
     {
         "homeTeamName": "Athletics",
-        "temp": 65
+        "temp": 62
+    },
+    {
+        "homeTeamName": "Pirates",
+        "temp": 82
     }
 ]

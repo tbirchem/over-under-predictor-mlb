@@ -1,77 +1,98 @@
 export let parks = [
     {
-        "parkName": "Great American BP",
-        "runPercentage": 2,
-        "wind-src": "Images/OutLeft.svg"
-    },
-    {
-        "parkName": "Petco Park",
-        "runPercentage": -1,
-        "wind-src": "Images/FromLeft.svg"
-    },
-    {
-        "parkName": "Angel Stadium",
-        "runPercentage": -2,
-        "wind-src": "Images/OutLeftCenter.svg"
-    },
-    {
         "parkName": "Citi Field",
-        "runPercentage": -2,
-        "wind-src": "Images/OutRight.svg"
+        "runPercentage": 2,
+        "wind": "OutRightMiddle",
+        "windy": "Wind2"
     },
     {
-        "parkName": "Tropicana Field",
-        "runPercentage": -2,
-        "wind-src": "Images/RoofClosed.png"
-    },
-    {
-        "parkName": "Busch Stadium",
+        "parkName": "Minute Maid Park",
         "runPercentage": -6,
-        "wind-src": "Images/FromRight.svg"
+        "wind": "RoofClosed",
+        "windy": "empty"
+    },
+    {
+        "parkName": "Rogers Centre",
+        "runPercentage": 3,
+        "wind": "InLeft",
+        "windy": "Wind3"
+    },
+    {
+        "parkName": "Nationals Park",
+        "runPercentage": 9,
+        "wind": "OutRightMiddle",
+        "windy": "Wind3"
+    },
+    {
+        "parkName": "Coors Field",
+        "runPercentage": 15,
+        "wind": "OutCenter",
+        "windy": "Wind2"
     },
     {
         "parkName": "T-Mobile Park",
-        "runPercentage": -10,
-        "wind-src": "Images/InLeft.svg"
+        "runPercentage": -6,
+        "wind": "OutRightCenter",
+        "windy": "Wind1"
     },
     {
-        "parkName": "Oakland Coliseum",
-        "runPercentage": -9,
-        "wind-src": "Images/OutRight.svg"
+        "parkName": "PNC Park",
+        "runPercentage": 2,
+        "wind": "OutCenter",
+        "windy": "Wind2"
     },
     {
-        "parkName": "Fenway Park",
-        "runPercentage": 13,
-        "wind-src": "Images/OutRight.svg"
+        "parkName": "Oriole Park",
+        "runPercentage": 9,
+        "wind": "OutRightMiddle",
+        "windy": "Wind3"
     },
     {
         "parkName": "Chase Field",
         "runPercentage": 10,
-        "wind-src": "Images/RoofClosed.png"
+        "wind": "RoofClosed",
+        "windy": "empty"
     },
     {
-        "parkName": "Target Field",
-        "runPercentage": 5,
-        "wind-src": "Images/OutLeftMiddle.svg"
-    },
-    {
-        "parkName": "Truist Park",
-        "runPercentage": 4,
-        "wind-src": "Images/OutLeft.svg"
-    },
-    {
-        "parkName": "Comerica Park",
-        "runPercentage": 3,
-        "wind-src": "Images/OutLeftMiddle.svg"
+        "parkName": "Fenway Park",
+        "runPercentage": 13,
+        "wind": "OutRight",
+        "windy": "Wind2"
     },
     {
         "parkName": "Nationals Park",
-        "runPercentage": 3,
-        "wind-src": "Images/OutRightMiddle.svg"
+        "runPercentage": 7,
+        "wind": "FromLeft",
+        "windy": "Wind3"
     },
     {
-        "parkName": "Guaranteed Rate Fld",
-        "runPercentage": 1,
-        "wind-src": "Images/InLeftCenter.svg"
+        "parkName": "Dodger Stadium",
+        "runPercentage": -4,
+        "wind": "OutRight",
+        "windy": "Wind1"
+    },
+    {
+        "parkName": "Wrigley Field",
+        "runPercentage": 0,
+        "wind": "OutLeft",
+        "windy": "Wind1"
+    },
+    {
+        "parkName": "Comerica Park",
+        "runPercentage": 5,
+        "wind": "OutLeftCenter",
+        "windy": "Wind3"
+    },
+    {
+        "parkName": "Oakland Coliseum",
+        "runPercentage": -10,
+        "wind": "OutRight",
+        "windy": "Wind2"
+    },
+    {
+        "parkName": "Great American BP",
+        "runPercentage": 9,
+        "wind": "OutCenter",
+        "windy": "Wind2"
     }
 ]

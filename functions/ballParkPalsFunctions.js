@@ -112,6 +112,63 @@ export function ballParkPalsRuns(parks) {
     }
 }
 
+export function windDirection(parks) {
+    for (i = 0; i < parks.length; i++) {
+        obj = parks[i];
+        for (key in obj) {
+            value = obj[key];
+            // console.log("-" + key + ": " + value);
+            if (value + '' === parkFinder(homeTeamName)) {
+                obj.wind;
+                if(obj.wind.includes('Out')){
+                    return 'out'
+                }
+                else if(obj.wind.includes('In')){
+                    return 'in'
+                }
+            }
+        }
+    }
+}
+
+export function windMPH(parks) {
+    for (i = 0; i < parks.length; i++) {
+        obj = parks[i];
+        for (key in obj) {
+            value = obj[key];
+            // console.log("-" + key + ": " + value);
+            if (value + '' === parkFinder(homeTeamName)) {
+                obj.windy;
+                if(obj.windy.includes('Wind3') && windDirection(parks) === 'out'){
+                    return '15+ out'
+                }
+                else if(obj.windy.includes('Wind3') && windDirection(parks) === 'in'){
+                    return '15+ in'
+                }
+            }
+        }
+    }
+}
+
+export function windMPH2(parks) {
+    for (i = 0; i < parks.length; i++) {
+        obj = parks[i];
+        for (key in obj) {
+            value = obj[key];
+            // console.log("-" + key + ": " + value);
+            if (value + '' === parkFinder(homeTeamName)) {
+                obj.windy;
+                if(obj.windy.includes('Wind2') && windDirection(parks) === 'out'){
+                    return '10+ out'
+                }
+                else if(obj.windy.includes('Wind2') && windDirection(parks) === 'in'){
+                    return '10+ in'
+                }
+            }
+        }
+    }
+}
+
 export function ballParkPalParkName(parks){
     for (i = 0; i < parks.length; i++) {
         obj = parks[i];

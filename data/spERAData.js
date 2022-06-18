@@ -1,92 +1,98 @@
-export let sp =[
-    {
-        "homeTeamName": "Cubs",
-        "awayTeamName": "White Sox",
-        "homeSp": 1.54,
-        "awaySp": 0.00
-    },
-    {
-        "homeTeamName": "Rockies",
-        "awayTeamName": "Nationals",
-        "homeSp": 3.67,
-        "awaySp": 6.97
-    },
-    {
-        "homeTeamName": "Orioles",
-        "awayTeamName": "Red Sox",
-        "homeSp": 0.00,
-        "awaySp": 0.00
-    },
-    {
-        "homeTeamName": "Brewers",
-        "awayTeamName": "Cardinals",
-        "homeSp": 3.69,
-        "awaySp": 3.72
-    },
+export let sp = [
     {
         "homeTeamName": "Giants",
-        "awayTeamName": "Reds",
-        "homeSp": 4.82,
-        "awaySp": 8.70
+        "awayTeamName": "Pirates",
+        "homeSp": 3.18,
+        "awaySp": 4.50
     },
     {
-        "homeTeamName": "Pirates",
-        "awayTeamName": "Padres",
-        "homeSp": 4.64,
-        "awaySp": 1.90
-    },
-    {
-        "homeTeamName": "Royals",
-        "awayTeamName": "Twins",
-        "homeSp": 1.78,
-        "awaySp": 4.19
+        "homeTeamName": "White Sox",
+        "awayTeamName": "Astros",
+        "homeSp": 3.88,
+        "awaySp": 2.64
     },
     {
         "homeTeamName": "Rangers",
-        "awayTeamName": "Athletics",
-        "homeSp": 5.77,
-        "awaySp": 4.43
+        "awayTeamName": "Tigers",
+        "homeSp": 4.85,
+        "awaySp": 2.71
     },
     {
         "homeTeamName": "Marlins",
-        "awayTeamName": "Braves",
-        "homeSp": 2.11,
-        "awaySp": 8.71
+        "awayTeamName": "Mets",
+        "homeSp": 0.00,
+        "awaySp": 3.93
     },
     {
-        "homeTeamName": "Yankees",
-        "awayTeamName": "Rays",
-        "homeSp": 3.31,
-        "awaySp": 4.42
+        "homeTeamName": "Braves",
+        "awayTeamName": "Cubs",
+        "homeSp": 5.67,
+        "awaySp": 3.67
+    },
+    {
+        "homeTeamName": "Royals",
+        "awayTeamName": "Athletics",
+        "homeSp": 0.00,
+        "awaySp": 3.40
+    },
+    {
+        "homeTeamName": "Padres",
+        "awayTeamName": "Rockies",
+        "homeSp": 2.50,
+        "awaySp": 4.39
     },
     {
         "homeTeamName": "Guardians",
-        "awayTeamName": "Tigers",
-        "homeSp": 3.55,
-        "awaySp": 3.00
+        "awayTeamName": "Dodgers",
+        "homeSp": 4.70,
+        "awaySp": 2.12
     },
     {
-        "homeTeamName": "Dodgers",
-        "awayTeamName": "D-backs",
-        "homeSp": 1.62,
-        "awaySp": 3.49
+        "homeTeamName": "Brewers",
+        "awayTeamName": "Reds",
+        "homeSp": 3.36,
+        "awaySp": 5.10
+    },
+    {
+        "homeTeamName": "Yankees",
+        "awayTeamName": "Blue Jays",
+        "homeSp": 2.70,
+        "awaySp": 3.14
+    },
+    {
+        "homeTeamName": "Angels",
+        "awayTeamName": "Mariners",
+        "homeSp": 3.45,
+        "awaySp": 4.52
+    },
+    {
+        "homeTeamName": "Rays",
+        "awayTeamName": "Orioles",
+        "homeSp":  19.29,
+        "awaySp": 3.86
     },
     {
         "homeTeamName": "Phillies",
-        "awayTeamName": "Mets",
-        "homeSp": 3.65,
-        "awaySp": 2.70
+        "awayTeamName": "Nationals",
+        "homeSp": 4.40,
+        "awaySp": 6.95
     },
     {
-        "homeTeamName": "Blue Jays",
-        "awayTeamName": "Angels",
-        "homeSp": 3.47,
-        "awaySp": 3.05
+        "homeTeamName": "Twins",
+        "awayTeamName": "D-backs",
+        "homeSp": 2.38,
+        "awaySp": 3.50
     },
     {
-        "homeTeamName": "Astros",
-        "awayTeamName": "Mariners",
-        "homeSp": 4.24,
-        "awaySp": 2.60
+        "homeTeamName": "Cardinals",
+        "awayTeamName": "Red Sox",
+        "homeSp": 2.84,
+        "awaySp": 2.33
+    },
+    {
+        "homeTeamName": "Phillies",
+        "awayTeamName": "Nationals",
+        "homeSp": 4.20,
+        "awaySp": 2.08
     }
 ]
