@@ -168,16 +168,3 @@ export function windMPH2(parks) {
         }
     }
 }
-
-export function ballParkPalParkName(parks){
-    for (i = 0; i < parks.length; i++) {
-        obj = parks[i];
-        for (key in obj) {
-            value = obj[key];
-            // console.log("-" + key + ": " + value);
-            if (value + '' === parkFinder(homeTeamName)) {
-                return obj.parkName;
-            }
-        }
-    }
-}
