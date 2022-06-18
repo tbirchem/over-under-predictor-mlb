@@ -236,10 +236,10 @@ function finalFinalPrediction(initialPrediction) {
         initialPrediction = initialPrediction - 1.10
     }
     if (windsMph() === 'pretty good') {
-        initialPrediction = initialPrediction + .30
+        initialPrediction = initialPrediction + .25
     }
     if (windsMph() === 'pretty yikes') {
-        initialPrediction = initialPrediction - 0.75
+        initialPrediction = initialPrediction - 0.25
     }
     if (myPrediction === 'over') {
         initialPrediction = initialPrediction + .42
