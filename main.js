@@ -24,7 +24,7 @@ console.log("Ball Park rating: ", espnParkRuns(espnParks))
 // console.log("*if Away or Home team have a top pitcher, answer 'f' for the corresponding team having a good pitcher*")
 // export const awaySpERA = prompt('Away SP era >= 4.75?:');
 // export const homeSpERA = prompt('Home SP era >= 4.75?:');
-export const dayOrNight = prompt('is this a day game?:');
+// export const dayOrNight = prompt('is this a day game?:');
 // const runLine = prompt('line:');
 const prsnlOpinion = prompt("Do you think the game will be 'over' or 'under'?:");
 
@@ -83,10 +83,6 @@ let myPrediction = prsnlOpinion // Will equal 'over' or 'under', based on what I
 let awayTeamOU = aTeamOverUnder(oVoU)
 let homeTeamOU = hTeamOverUnder(oVoU)
 
-// if day game = 1.04, else = 1.0
-let dayGame = dayNight(dayOrNight)
-// (any start before 6pm ET)
-
 
 // No User Input needed
 
@@ -119,13 +115,13 @@ let homeAvg = (home.homeRuns + home.avgR + home.avg3 + away.tmERA + impliedTotal
 
 function awayRuns(awayAvg) {
     if (topHomePitcher >= 1.30 && topHomePitcher <= 3.45) {
-        awayAvg = awayAvg - 1
+        awayAvg = awayAvg - 0.85
     }
     if (goodHomePitcher >= 3.46 && goodHomePitcher <= 4.25) {
-        awayAvg = awayAvg - .40
+        awayAvg = awayAvg - .30
     }
     if (home.tmERA <= 3.35) {
-        awayAvg = awayAvg - .30
+        awayAvg = awayAvg - .28
     }
     if (home.tmERA >= 4) {
         awayAvg = awayAvg + .42
@@ -141,13 +137,13 @@ function awayRuns(awayAvg) {
 
 function homeRuns(homeAvg) {
     if (topAwayPitcher >= 1.30 && topAwayPitcher <= 3.45) {
-        homeAvg = homeAvg - 1
+        homeAvg = homeAvg - .85
     }
     if (goodAwayPitcher >= 3.46 && goodAwayPitcher <= 4.25) {
-        homeAvg = homeAvg - .40
+        homeAvg = homeAvg - .30
     }
     if (away.tmERA <= 3.35) {
-        homeAvg = homeAvg - .30
+        homeAvg = homeAvg - .28
     }
     if (away.tmERA >= 4) {
         homeAvg = homeAvg + .42
@@ -224,7 +220,7 @@ function finalFinalPrediction(initialPrediction) {
         initialPrediction = initialPrediction - 0.40
     }
     if (windy() === 'bad') {
-        initialPrediction = initialPrediction - .55
+        initialPrediction = initialPrediction - .45
     }
     if (windy() === 'really good') {
         initialPrediction = initialPrediction + .40
@@ -233,7 +229,7 @@ function finalFinalPrediction(initialPrediction) {
         initialPrediction = initialPrediction + .45
     }
     if (windsMph() === 'yikes') {
-        initialPrediction = initialPrediction - 1.10
+        initialPrediction = initialPrediction - -.75
     }
     if (windsMph() === 'pretty good') {
         initialPrediction = initialPrediction + .25
@@ -245,7 +241,7 @@ function finalFinalPrediction(initialPrediction) {
         initialPrediction = initialPrediction + .42
     }
     if (myPrediction === 'under') {
-        initialPrediction = initialPrediction - .40
+        initialPrediction = initialPrediction - .38
     }
     if (awayTeamOU === 'over') {
         initialPrediction = initialPrediction + .40
@@ -281,9 +277,7 @@ let ballParkFinalRating = (ballparkPal + ballParkRating) / 2
 
 let overUnder = finalFinalPrediction(initialPrediction) * ballParkFinalRating
 
-let final = overUnder * dayGame
-
-const newOverUnder = final.toFixed(1)
+const newOverUnder = overUnder.toFixed(1)
 
 function oU(newOverUnder) {
     if (newOverUnder > line) {
@@ -346,9 +340,6 @@ import {
 import {
     awayTeamAvgR, awayTeamAvg3, teamAvgAway
 } from '/Users/taylorbirchem/WebstormProjects/overunderpredictormlb/functions/awayRunsFunctions.js';
-import {
-    dayNight
-} from '/Users/taylorbirchem/WebstormProjects/overunderpredictormlb/functions/inputFunctions.js';
 import {
     hTeamEra
 } from '/Users/taylorbirchem/WebstormProjects/overunderpredictormlb/functions/homeTeamEraFunctions.js';

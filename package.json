@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "type": "module",
   "dependencies": {
+    "data": "^0.6.1",
     "express": "^4.18.1",
     "prompt-sync": "^4.2.0"
   }
