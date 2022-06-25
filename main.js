@@ -318,55 +318,55 @@ setTimeout(function () {
 })
 
 
-import {parks} from '/Users/taylorbirchem/WebstormProjects/overunderpredictormlb/data/ballParkPalsData.js';
-import {espnParks} from '/Users/taylorbirchem/WebstormProjects/overunderpredictormlb/data/espnParkData.js';
-import {teamRuns} from '/Users/taylorbirchem/WebstormProjects/overunderpredictormlb/data/runData.js';
-import {teamEra} from '/Users/taylorbirchem/WebstormProjects/overunderpredictormlb/data/teamEraData.js';
-import {oVoU} from '/Users/taylorbirchem/WebstormProjects/overunderpredictormlb/data/overUnderData.js';
-import {runLines} from '/Users/taylorbirchem/WebstormProjects/overunderpredictormlb/data/runLineData.js';
-import {moneyLine} from '/Users/taylorbirchem/WebstormProjects/overunderpredictormlb/data/moneyLineData.js';
+import {parks} from './data/ballParkPalsData.js';
+import {espnParks} from './data/espnParkData.js';
+import {teamRuns} from './data/runData.js';
+import {teamEra} from './data/teamEraData.js';
+import {oVoU} from './data/overUnderData.js';
+import {runLines} from './data/runLineData.js';
+import {moneyLine} from './data/moneyLineData.js';
 import {sp} from "./data/spERAData.js";
 import {temperature} from "./data/tempData.js";
 
 import {
     ballParkPalsRuns, windDirection, windMPH, windMPH2
-} from '/Users/taylorbirchem/WebstormProjects/overunderpredictormlb/functions/ballParkPalsFunctions.js';
+} from './functions/ballParkPalsFunctions.js';
 import {
     espnParkRuns
-} from '/Users/taylorbirchem/WebstormProjects/overunderpredictormlb/functions/espnParkFunctions.js';
+} from './functions/espnParkFunctions.js';
 import {
     teamAvgR, teamAvg3, teamAvgHome
-} from '/Users/taylorbirchem/WebstormProjects/overunderpredictormlb/functions/homeRunsFunctions.js';
+} from './functions/homeRunsFunctions.js';
 import {
     awayTeamAvgR, awayTeamAvg3, teamAvgAway
-} from '/Users/taylorbirchem/WebstormProjects/overunderpredictormlb/functions/awayRunsFunctions.js';
+} from './functions/awayRunsFunctions.js';
 import {
     hTeamEra
-} from '/Users/taylorbirchem/WebstormProjects/overunderpredictormlb/functions/homeTeamEraFunctions.js';
+} from './functions/homeTeamEraFunctions.js';
 import {
     aTeamEra
-} from '/Users/taylorbirchem/WebstormProjects/overunderpredictormlb/functions/awayTeamEraFunctions.js';
+} from './functions/awayTeamEraFunctions.js';
 import {
     hTeamOverUnder
-} from '/Users/taylorbirchem/WebstormProjects/overunderpredictormlb/functions/homeOverUnderFunctions.js';
+} from './functions/homeOverUnderFunctions.js';
 import {
     aTeamOverUnder
-} from '/Users/taylorbirchem/WebstormProjects/overunderpredictormlb/functions/awayOverUnderFunctions.js';
+} from './functions/awayOverUnderFunctions.js';
 import {
     runLineFinder
-} from '/Users/taylorbirchem/WebstormProjects/overunderpredictormlb/functions/runLineFunctions.js';
+} from './functions/runLineFunctions.js';
 import {
     homeMoneyLineFinder
-} from '/Users/taylorbirchem/WebstormProjects/overunderpredictormlb/functions/homeMoneyLineFunctions.js';
+} from './functions/homeMoneyLineFunctions.js';
 import {
     awayMoneyLineFinder
-} from '/Users/taylorbirchem/WebstormProjects/overunderpredictormlb/functions/awayMoneyLineFunctions.js';
+} from './functions/awayMoneyLineFunctions.js';
 import {
     homeEraFinder
-} from '/Users/taylorbirchem/WebstormProjects/overunderpredictormlb/functions/homeSpERAFunctions.js';
+} from './functions/homeSpERAFunctions.js';
 import {
     awayEraFinder
-} from '/Users/taylorbirchem/WebstormProjects/overunderpredictormlb/functions/awaySpERAFunctions.js';
+} from './functions/awaySpERAFunctions.js';
 import {
     tempFinder
 } from "./functions/tempFunction.js";
