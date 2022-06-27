@@ -37,37 +37,29 @@ function homeTeamGen(games) {
     }
 }
 
+// Team Names
 export const awayTeamName = awayTeamGen(games)
+
 export const homeTeamName = homeTeamGen(games)
 
-// export const awayTeamName = prompt('Away team:');
-// export const homeTeamName = prompt('Home team:');
+// Telling Us if team is Over or Under
+
+console.log('')
 console.log('The', awayTeamName, 'are', aTeamOverUnder(oVoU))
 console.log('The', homeTeamName, 'are', hTeamOverUnder(oVoU))
-// console.log("Game time temp: ", tempFinder(temperature))
+console.log('')
 console.log("Wind direction: ", windDirection(parks))
 console.log("Wind MPH: ", windMPH2(parks), windMPH(parks))
-// console.log("Ball Park rating: ", espnParkRuns(espnParks))
-// console.log('The', awayTeamName,"'s","sp's era is", awayEraFinder(sp) )
-// console.log('The', homeTeamName,"s","sp's era is", homeEraFinder(sp))
-// console.log("--- Respond with a 't' or 'f' ---")
-// console.log("*if Away or Home team have a top pitcher, answer 'f' for the corresponding team having a good pitcher*")
-// export const awaySpERA = prompt('Away SP era >= 4.75?:');
-// export const homeSpERA = prompt('Home SP era >= 4.75?:');
-// export const dayOrNight = prompt('is this a day game?:');
-// const runLine = prompt('line:');
-// const prsnlOpinion = prompt("Do you think the game will be 'over' or 'under'?:");
 
-console.log("Away Team: ", awayTeamGen(games))
-console.log("Home Team: ", homeTeamGen(games))
-let line = runLineFinder(runLines)
 let awayOdds = awayMoneyLineFinder(moneyLine)
-console.log("Away moneyLine:", awayOdds)
-// console.log(awayMoneyLineFinder(moneyLine))
 let homeOdds = homeMoneyLineFinder(moneyLine)
+
+console.log('')
+console.log("Away moneyLine:", awayOdds)
 console.log("Home moneyLine:", homeOdds)
-// console.log(homeMoneyLineFinder(moneyLine))
-// Away Team = OAK
+
+// Away Team
+
 let away = {
     awayRuns: teamAvgAway(teamRuns), // Avg Runs scored in away games
     avg3: awayTeamAvg3(teamRuns), // Avg runs scored over last 3 games
@@ -75,7 +67,8 @@ let away = {
     tmERA: aTeamEra(teamEra) // Team ERA
 }
 
-// Home Team = LAA
+// Home Team
+
 let home = {
     homeRuns: teamAvgHome(teamRuns), // Avg Runs scored in home games
     avg3: teamAvg3(teamRuns), // Avg runs scored over last 3 games
@@ -84,31 +77,38 @@ let home = {
 }
 
 // starting pitcher era >= 1.30 && starting pitcher era <= 3.45
+
 let topAwayPitcher = awayEraFinder(sp);
 let topHomePitcher = homeEraFinder(sp);
 
 // starting pitcher era >= 3.46 && starting pitcher era <= 4.25
+
 let goodAwayPitcher = awayEraFinder(sp);
 let goodHomePitcher = homeEraFinder(sp);
 
 // if Starting pitcher era is above 4.75 = true
+
 let badAwayPitcher = awayEraFinder(sp);
 let badHomePitcher = homeEraFinder(sp);
 
 // Park factors from Ball Park Pal
+
 let ballparkPal = (ballParkPalsRuns(parks) / 100) + 1
 let wind = windDirection(parks) // 'out', 'in'
 let windMph = windMPH(parks) // '15+ out', '15+ in'
 let windMph2 = windMPH2(parks) //'10+ out, '10+ in
 
 // Ball Park rating from ESPN
+
 let ballParkRating = espnParkRuns(espnParks)
 
 // if dome weather = 65
+
 let temp = tempFinder(temperature)
 
 // Based on if team has more games where it went under or over
-//'under', 'way under', 'over', 'way over'
+// 'under', 'way under', 'over', 'way over'
+
 let awayTeamOU = aTeamOverUnder(oVoU)
 let homeTeamOU = hTeamOverUnder(oVoU)
 
@@ -116,9 +116,6 @@ let homeTeamOU = hTeamOverUnder(oVoU)
 // No User Input needed
 
 // implied totals
-
-// console.log(impliedTotalHome(homeOdds))
-// console.log(impliedTotalAway(awayOdds))
 
 function impliedTotalAway(awayOdds) {
     if (awayOdds >= 1) {
@@ -137,8 +134,8 @@ function impliedTotalHome(homeOdds) {
 }
 
 // Averages out score of teams last three games + Teams avg run scored in season
-let awayAvg = (away.awayRuns + away.avgR + away.avg3 + home.tmERA + impliedTotalAway(awayOdds)) / 5
 
+let awayAvg = (away.awayRuns + away.avgR + away.avg3 + home.tmERA + impliedTotalAway(awayOdds)) / 5
 
 let homeAvg = (home.homeRuns + home.avgR + home.avg3 + away.tmERA + impliedTotalHome(homeOdds)) / 5
 
@@ -230,7 +227,7 @@ function windsMph(windMph, windMph2) {
 
 let initialPrediction = awayRuns(awayAvg) + homeRuns(homeAvg)
 
-// console.log("Proj total team runs (bfr weather):", initialPrediction)
+// console.log("Proj total team runs (bfr weather): ", initialPrediction)
 
 function myPrediction(awayTeamOU, homeTeamOU) {
     if (awayTeamOU && homeTeamOU === 'over') {
@@ -328,14 +325,15 @@ function finalFinalPrediction(initialPrediction) {
     return initialPrediction
 }
 
-// console.log("Proj total runs after weather):", finalFinalPrediction(initialPrediction))
+// console.log("Proj total runs after weather: ", finalFinalPrediction(initialPrediction))
 
 let ballParkFinalRating = (ballparkPal + ballParkRating) / 2
-// console.log("Ballpark Final rating: ", ballParkFinalRating)
 
 let overUnder = finalFinalPrediction(initialPrediction) * ballParkFinalRating
 
 const newOverUnder = overUnder.toFixed(1)
+
+let line = runLineFinder(runLines)
 
 function oU(newOverUnder) {
     if (newOverUnder > line) {
@@ -433,13 +431,14 @@ function pod() {
 // console.log(bPP(parks))
 // console.log(parkName(parks))
 
-console.log("My Prediction:", myPrediction(awayTeamOU, homeTeamOU))
 console.log('')
+console.log('-------Result-------')
 console.log(awayTeamName, '@', homeTeamName)
 console.log('Projected runs: ', newOverUnder)
 console.log('The line is: ', line)
 console.log(oU(newOverUnder))
 console.log(pod())
+console.log('--------------------')
 console.log('')
 
 let start = new Date()
