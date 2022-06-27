@@ -1,7 +1,9 @@
 /*
 * Author Taylor Birchem
-* node.js version (14.17)
-* last updated 06.16.22
+*
+* node.js (v14.17.6)
+*
+* last updated 06.27.22
  */
 
 import {createRequire} from 'node:module';
@@ -450,7 +452,7 @@ setTimeout(function () {
     console.info('Execution time: %ds %dms', hrend[0], hrend[1] / 1000000)
 })
 
-import {games} from '../overunderpredictormlb/data/gameData.js';
+import {games} from './data/gameData.js';
 import {parks} from './data/ballParkPalsData.js';
 import {espnParks} from './data/espnParkData.js';
 import {teamRuns} from './data/runData.js';

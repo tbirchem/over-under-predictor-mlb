@@ -1,77 +1,47 @@
 export let games = [
     {
         "game": 1,
-        "awayTeam": "Mariners",
-        "homeTeam": "Angels"
+        "awayTeam": "Rangers",
+        "homeTeam": "Royals"
     },
     {
         "game": 2,
-        "awayTeam": "Astros",
-        "homeTeam": "Yankees"
+        "awayTeam": "Pirates",
+        "homeTeam": "Nationals"
     },
     {
         "game": 3,
-        "awayTeam": "a's",
-        "homeTeam": "Royals"
+        "awayTeam": "Marlins",
+        "homeTeam": "Cardinals"
     },
     {
         "game": 4,
         "awayTeam": "Dodgers",
-        "homeTeam": "Braves"
+        "homeTeam": "Rockies"
     },
     {
         "game": 5,
-        "awayTeam": "Phillies",
-        "homeTeam": "Padres"
+        "awayTeam": "White Sox",
+        "homeTeam": "Angels"
     },
     {
         "game": 6,
-        "awayTeam": "Mets",
-        "homeTeam": "Marlins"
-    },
-    {
-        "game": 7,
-        "awayTeam": "Rockies",
-        "homeTeam": "Diamond backs"
-    },
-    {
-        "game": 8,
-        "awayTeam": "Red Sox",
+        "awayTeam": "Twins",
         "homeTeam": "Guardians"
     },
     {
-        "game": 9,
+        "game": 7,
+        "awayTeam": "Athletics",
+        "homeTeam": "Yankees"
+    },
+    {
+        "game": 8,
         "awayTeam": "Orioles",
-        "homeTeam": "White Sox"
+        "homeTeam": "Mariners"
     },
     {
-        "game": 10,
-        "awayTeam": "Cubs",
-        "homeTeam": "Cardinals"
-    },
-    {
-        "game": 11,
-        "awayTeam": "Blue Jays",
-        "homeTeam": "Brewers"
-    },
-    {
-        "game": 12,
-        "awayTeam": "Pirates",
-        "homeTeam": "Rays"
-    },
-    {
-        "game": 13,
-        "awayTeam": "Nationals",
-        "homeTeam": "Rangers"
-    },
-    {
-        "game": 14,
-        "awayTeam": "Rockies",
-        "homeTeam": "Twins"
-    },
-    {
-        "game": 15,
-        "awayTeam": "Reds",
-        "homeTeam": "Giants"
+        "game": 9,
+        "awayTeam": "Red Sox",
+        "homeTeam": "Blue Jays"
     }
 ]
