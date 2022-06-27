@@ -31,7 +31,7 @@ export let games = [
     },
     {
         "game": 7,
-        "awayTeam": "Athletics",
+        "awayTeam": "A's",
         "homeTeam": "Yankees"
     },
     {

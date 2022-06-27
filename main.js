@@ -409,16 +409,16 @@ function computersUnderPOD() {
 }
 
 function pod() {
-    if (computersOverPOD() >= 5) {
+    if (computersOverPOD() >= 6) {
         return 'POD!'
     }
-    if (computersOverPOD() === 4) {
+    if (computersOverPOD() === 5) {
         return 'Green Pick'
     }
-    if (computersUnderPOD() >= 5) {
+    if (computersUnderPOD() >= 6) {
         return 'POD!'
     }
-    if (computersUnderPOD() === 4) {
+    if (computersUnderPOD() === 5) {
         return 'Green Pick'
     }
 }
