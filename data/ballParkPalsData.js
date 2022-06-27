@@ -1,5 +1,11 @@
 export let parks = [
     {
+        "parkName": "Angel Stadium",
+        "runPercentage": 4,
+        "wind": "Images/OutLeftCenter.svg",
+        "windy": "Images/Wind3.png"
+    },
+    {
         "web-scraper-order": "1655656629-130",
         "web-scraper-start-url": "https://ballparkpal.com/ParkFactors2.php",
         "parkName": "Rogers Centre",

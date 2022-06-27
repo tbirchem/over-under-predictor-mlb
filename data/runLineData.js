@@ -2,8 +2,8 @@ export let runLines = [
     {
         "web-scraper-order": "1655657753-141",
         "web-scraper-start-url": "https://www.espn.com/mlb/scoreboard",
-        "homeTeam": "Pirates",
-        "runLine": 8.5
+        "homeTeam": "Angels",
+        "runLine": 7.5
     },
     {
         "web-scraper-order": "1655657753-151",

@@ -8,16 +8,44 @@ import {createRequire} from 'node:module';
 
 const require = createRequire(import.meta.url)
 const prompt = require('prompt-sync')();
+const gameNumber = prompt('Game Number:');
 
 
-export const awayTeamName = prompt('Away team:');
-export const homeTeamName = prompt('Home team:');
+function awayTeamGen(games) {
+    for (let i = 0; i < games.length; i++) {
+        let obj = games[i];
+        for (let key in obj) {
+            let value = obj[key];
+            if (value + '' === gameNumber) {
+                return obj.awayTeam.toLowerCase();
+            }
+        }
+    }
+}
+
+function homeTeamGen(games) {
+    for (let i = 0; i < games.length; i++) {
+        let obj = games[i];
+        for (let key in obj) {
+            let value = obj[key];
+            if (value + '' === gameNumber) {
+                return obj.homeTeam.toLowerCase();
+            }
+        }
+    }
+}
+
+export const awayTeamName = awayTeamGen(games)
+export const homeTeamName = homeTeamGen(games)
+
+// export const awayTeamName = prompt('Away team:');
+// export const homeTeamName = prompt('Home team:');
 console.log('The', awayTeamName, 'are', aTeamOverUnder(oVoU))
 console.log('The', homeTeamName, 'are', hTeamOverUnder(oVoU))
 // console.log("Game time temp: ", tempFinder(temperature))
 console.log("Wind direction: ", windDirection(parks))
 console.log("Wind MPH: ", windMPH2(parks), windMPH(parks))
-console.log("Ball Park rating: ", espnParkRuns(espnParks))
+// console.log("Ball Park rating: ", espnParkRuns(espnParks))
 // console.log('The', awayTeamName,"'s","sp's era is", awayEraFinder(sp) )
 // console.log('The', homeTeamName,"s","sp's era is", homeEraFinder(sp))
 // console.log("--- Respond with a 't' or 'f' ---")
@@ -26,9 +54,10 @@ console.log("Ball Park rating: ", espnParkRuns(espnParks))
 // export const homeSpERA = prompt('Home SP era >= 4.75?:');
 // export const dayOrNight = prompt('is this a day game?:');
 // const runLine = prompt('line:');
-const prsnlOpinion = prompt("Do you think the game will be 'over' or 'under'?:");
+// const prsnlOpinion = prompt("Do you think the game will be 'over' or 'under'?:");
 
-
+console.log("Away Team: ", awayTeamGen(games))
+console.log("Home Team: ", homeTeamGen(games))
 let line = runLineFinder(runLines)
 let awayOdds = awayMoneyLineFinder(moneyLine)
 console.log("Away moneyLine:", awayOdds)
@@ -75,8 +104,6 @@ let ballParkRating = espnParkRuns(espnParks)
 
 // if dome weather = 65
 let temp = tempFinder(temperature)
-
-let myPrediction = prsnlOpinion // Will equal 'over' or 'under', based on what I think the game will end up being
 
 // Based on if team has more games where it went under or over
 //'under', 'way under', 'over', 'way over'
@@ -159,7 +186,7 @@ function homeRuns(homeAvg) {
 
 // External Factors
 
-function weather() {
+function weather(temp) {
     if (temp >= 75) {
         return true;
     }
@@ -173,20 +200,17 @@ function weather() {
     }
 }
 
-function windy() {
+function windy(wind) {
     if (wind === 'in') {
         return 'bad';
     }
     if (wind === 'out') {
         return 'really good';
     }
-    if (wind === 'out L/R') {
-        return 'good'
-    }
     return windy
 }
 
-function windsMph() {
+function windsMph(windMph, windMph2) {
     if (windMph === '15+ out') {
         return 'great'
     }
@@ -206,42 +230,74 @@ let initialPrediction = awayRuns(awayAvg) + homeRuns(homeAvg)
 
 // console.log("Proj total team runs (bfr weather):", initialPrediction)
 
+function myPrediction(awayTeamOU, homeTeamOU) {
+    if (awayTeamOU && homeTeamOU === 'over') {
+        return 'over'
+    }
+    if (awayTeamOU.includes('way over') || homeTeamOU.includes('way over')) {
+        return 'over'
+    }
+    if (awayTeamOU === 'under' && homeTeamOU === 'under') {
+        return 'under'
+    }
+    if (awayTeamOU && homeTeamOU === 'way under') {
+        return 'under'
+    }
+    if (awayTeamOU === 'way under' && homeTeamOU === 'under') {
+        return 'under'
+    }
+    if ((awayTeamOU === 'under') && (homeTeamOU === 'way under')) {
+        return 'under'
+    }
+    if ((awayTeamOU === 'way over') && (homeTeamOU === 'under')) {
+        return 'over'
+    }
+    if ((awayTeamOU === 'way under') && (homeTeamOU === 'over')) {
+        return 'under'
+    }
+    if ((awayTeamOU === 'over') && (homeTeamOU === 'way under')) {
+        return 'under'
+    } else {
+        return 'over'
+    }
+}
+
 function finalFinalPrediction(initialPrediction) {
-    if (weather() === true) {
+    if (weather(temp) === true) {
         initialPrediction = initialPrediction + 0.40
     }
-    if (weather() === false) {
+    if (weather(temp) === false) {
         initialPrediction = initialPrediction - 0.40
     }
-    if (weather() === 'other') {
+    if (weather(temp) === 'other') {
         initialPrediction = initialPrediction + 0.12
     }
-    if (weather() === 'cold') {
+    if (weather(temp) === 'cold') {
         initialPrediction = initialPrediction - 0.40
     }
-    if (windy() === 'bad') {
+    if (windy(wind) === 'bad') {
         initialPrediction = initialPrediction - .45
     }
-    if (windy() === 'really good') {
+    if (windy(wind) === 'really good') {
         initialPrediction = initialPrediction + .40
     }
-    if (windsMph() === 'great') {
+    if (windsMph(windMph, windMph2) === 'great') {
         initialPrediction = initialPrediction + .45
     }
-    if (windsMph() === 'yikes') {
+    if (windsMph(windMph, windMph2) === 'yikes') {
         initialPrediction = initialPrediction - -.75
     }
-    if (windsMph() === 'pretty good') {
+    if (windsMph(windMph, windMph2) === 'pretty good') {
         initialPrediction = initialPrediction + .25
     }
-    if (windsMph() === 'pretty yikes') {
+    if (windsMph(windMph, windMph2) === 'pretty yikes') {
         initialPrediction = initialPrediction - 0.25
     }
-    if (myPrediction === 'over') {
-        initialPrediction = initialPrediction + .42
+    if (myPrediction(awayTeamOU, homeTeamOU) === 'over') {
+        initialPrediction = initialPrediction + .25
     }
-    if (myPrediction === 'under') {
-        initialPrediction = initialPrediction - .38
+    if (myPrediction(awayTeamOU, homeTeamOU) === 'under') {
+        initialPrediction = initialPrediction - .25
     }
     if (awayTeamOU === 'over') {
         initialPrediction = initialPrediction + .40
@@ -290,6 +346,81 @@ function oU(newOverUnder) {
     }
 }
 
+function computersOverPOD() {
+    let counter = 0;
+    if (oU(newOverUnder) === 'Over') {
+        counter++;
+    }
+    if (myPrediction(awayTeamOU, homeTeamOU) === 'over') {
+        counter++;
+    }
+    if (windy(wind) === 'really good') {
+        counter++;
+    }
+    if (badHomePitcher >= 4.75) {
+        counter++;
+    }
+    if (badAwayPitcher >= 4.75) {
+        counter++;
+    }
+    if (ballParkRating >= 1) {
+        counter++;
+    }
+    if (newOverUnder - 3 >= line) {
+        counter++;
+    }
+    if (windMPH(parks) === '15+ out') {
+        counter++;
+    }
+
+    return counter
+}
+
+function computersUnderPOD() {
+    let counter = 0;
+    if (oU(newOverUnder) === 'Under') {
+        counter++;
+    }
+    if (myPrediction(awayTeamOU, homeTeamOU) === 'under') {
+        counter++;
+    }
+    if (windy(wind) === 'bad') {
+        counter++;
+    }
+    if (topHomePitcher >= 1.30 && topHomePitcher <= 3.45) {
+        counter++;
+    }
+    if (topAwayPitcher >= 1.30 && topAwayPitcher <= 3.45) {
+        counter++;
+    }
+    if (ballParkRating <= 0.964) {
+        counter++;
+    }
+    if (newOverUnder + 3 <= line) {
+        counter++;
+    }
+    if (windMPH(parks) === '15+ in') {
+        counter++;
+    }
+
+    return counter
+}
+
+function pod() {
+    if (computersOverPOD() >= 5) {
+        return 'POD!'
+    }
+    if (computersOverPOD() === 4) {
+        return 'Green Pick'
+    }
+    if (computersUnderPOD() >= 5) {
+        return 'POD!'
+    }
+    if (computersUnderPOD() === 4) {
+        return 'Green Pick'
+    }
+}
+
 // -- For Debugging --
 // console.log(awayAvg.toFixed(2))
 // console.log(homeAvg.toFixed(2))
@@ -300,11 +431,13 @@ function oU(newOverUnder) {
 // console.log(bPP(parks))
 // console.log(parkName(parks))
 
+console.log("My Prediction:", myPrediction(awayTeamOU, homeTeamOU))
 console.log('')
+console.log(awayTeamName, '@', homeTeamName)
 console.log('Projected runs: ', newOverUnder)
 console.log('The line is: ', line)
 console.log(oU(newOverUnder))
-
+console.log(pod())
 console.log('')
 
 let start = new Date()
@@ -317,7 +450,7 @@ setTimeout(function () {
     console.info('Execution time: %ds %dms', hrend[0], hrend[1] / 1000000)
 })
 
-
+import {games} from '../overunderpredictormlb/data/gameData.js';
 import {parks} from './data/ballParkPalsData.js';
 import {espnParks} from './data/espnParkData.js';
 import {teamRuns} from './data/runData.js';

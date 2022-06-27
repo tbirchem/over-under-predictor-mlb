@@ -3,7 +3,7 @@ export let espnParks = [
         "web-scraper-order": "1655574250-176",
         "web-scraper-start-url": "https://www.espn.com/mlb/stats/parkfactor",
         "parkLocation": "null(Anaheim, California)",
-        "runs": 0.98
+        "runs": 1
     },
     {
         "web-scraper-order": "1655574250-163",
